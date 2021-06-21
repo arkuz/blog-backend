@@ -94,14 +94,13 @@ USE_TZ = True
 
 STATIC_URL = os.getenv('STATIC_URL', '/static/')
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),
-                    os.path.join(BASE_DIR, "static", "img"),
-                    os.path.join(BASE_DIR, "static", "img", "banner"),
-                    )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
 MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
 
-STATIC_ROOT = os.getenv("STATIC_ROOT")
+STATIC_ROOT = os.getenv("STATIC_ROOT", os.path.join(BASE_DIR, 'static_root'))
 
 MEDIA_URL = os.getenv('MEDIA_URL', '/media/')
 
